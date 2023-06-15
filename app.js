@@ -5,6 +5,13 @@ const exphbs = require('express-handlebars')
 const router = require('./routes/index')
 const app = express()
 require('./config/mongoose')
+const authenticator = (req, res, next) => {
+  if (req.session.isLoggedIn) {
+    // 用户已经通过身份验证
+    return next();
+  }
+  res.redirect('/users/login');
+}
 
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
@@ -18,7 +25,7 @@ app.use(session({
 app.use(router)
 
 
-app.get('/', (req, res) => {
+app.get('/', authenticator, (req, res) => {
   res.render('index')
 })
 
