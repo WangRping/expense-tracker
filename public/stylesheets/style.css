@@ -168,3 +168,17 @@ header {
   background: white;
   border: 0;
 }
+
+.create-container {
+  display: flex;
+  justify-content: center;
+}
+
+.create-container>a {
+  background-color: #ec673e;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 5rem;
+  border: 1px solid black;
+  border-radius: 5px;
+}
