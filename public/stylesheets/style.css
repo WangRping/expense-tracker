@@ -1,0 +1,36 @@
+body {
+  margin: 0 0;
+}
+
+header {
+  background: rgba(209, 204, 204, 0.89);
+}
+
+.nav-container {
+  height: 60px;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand>h3 {
+  font-weight: 900;
+}
+
+.nav-login>a,
+.nav-logout>a {
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: orange;
+  background: white;
+  padding: 3px 10px;
+  border: 1px black solid;
+  border-radius: 7px;
+}
+
+.navbar {
+  background: white;
+}
