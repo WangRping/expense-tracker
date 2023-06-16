@@ -16,4 +16,12 @@ router.post('/new', (req, res) => {
     .then(() => res.redirect('/'))
 })
 
+router.post('/:id/delete', (req, res) => {
+  const _id = req.params.id
+  const userId = req.user._id
+  Record.findOne({ _id, userId })
+    .then(record => record.remove())
+    .then(() => res.redirect('/'))
+})
+
 module.exports = router
