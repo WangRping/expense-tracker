@@ -182,3 +182,42 @@ header {
   border: 1px solid black;
   border-radius: 5px;
 }
+
+/* LOGIN PAGE */
+.login-container {
+  width: 75%;
+  margin: 3rem auto;
+}
+
+.login-title {
+  text-align: center;
+}
+
+.login-container>form {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.login-container>form>div {
+  margin: 1rem 0;
+}
+
+.login-container>form>div>label {
+  font-size: 1.25rem;
+}
+
+.login-container>form>div>input {
+  width: 82.5%;
+}
+
+.btn-content {
+  text-align: end;
+}
+
+.login-buttom {
+  margin: 0;
+  padding: 0 20px;
+  color: white;
+  border-radius: 5px;
+  background-color: #ec673e;
+}
