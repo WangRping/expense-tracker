@@ -12,8 +12,15 @@ router.get('/new', (req, res) => {
     .then(categorys => res.render('new', { categorys }))
 })
 
-router.post('/new', (req, res) => {
+router.post('/new', async (req, res) => {
   const record = req.body
+  const { name, date, categoryId, amount } = req.body
+  const categorys = await Category.find().lean()
+  if (!name || !date || !categoryId || !amount) {
+
+    return res.render('new', { name, date, amount, categorys })
+  }
+  console.log(record)
   record.userId = req.user._id
   Record.create(record)
     .then(() => res.redirect('/'))
