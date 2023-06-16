@@ -11,17 +11,25 @@
   </div>
 
   <div class="record-wrappser">
+    {{#each records}}
     <div class="card">
-      <img src="" alt="">
-      <div class="record-content">
-        <div class="record-title">TEST</div>
-        <div class="record-date">2023/06/15</div>
-        <div class="record-amout">556</div>
+      <div class="category-img">
+        {{{this.img}}}
       </div>
-      <a href="">修改</a>
-      <form action="" method="post">
-        <a href="">刪除</a>
+      <div class="record-content">
+        <div class="record-title">{{this.name}}</div>
+        <div class="record-date">{{this.date}}</div>
+        <div class="record-amout">{{this.amount}}</div>
+      </div>
+      <a href="/records/{{this._id}}/edit">修改</a>
+      <form action="/records/{{this._id}}/delete" method="post">
+        <button type="submit">刪除</button>
       </form>
     </div>
+    {{/each }}
+  </div>
+
+  <div class="create-container">
+    <a href="/records/new">新增支出</a>
   </div>
 </div>
