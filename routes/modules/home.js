@@ -13,7 +13,7 @@ const category = require('../../models/category')
 router.get('/', async (req, res) => {
   try {
     const userId = req.user._id;
-    const records = await Record.find({ userId }).lean();
+    const records = await Record.find({ userId }).sort({ date: 'desc' }).lean();
     const renderRecords = [];
 
     for (const record of records) {

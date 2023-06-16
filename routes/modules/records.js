@@ -40,14 +40,27 @@ router.get('/:id/edit', async (req, res) => {
       }
     }
 
-    console.log(categorys)
-
     record.date = moment(record.date).format('YYYY-MM-DD')
     res.render('edit', { record, categorys })
 
   } catch (err) {
     console.log(err)
   }
+})
+
+router.post('/:id/edit', (req, res) => {
+  const _id = req.params.id
+  const userId = req.user._id
+  const editRecordy = req.body
+  Record.findOne({ _id, userId })
+    .then(record => {
+      for (const key in editRecordy) {
+        record[key] = editRecordy[key]
+      }
+      return record.save()
+    })
+    .then(() => res.redirect('/'))
+    .catch(err => console.log(err))
 })
 
 module.exports = router
