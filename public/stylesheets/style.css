@@ -34,3 +34,35 @@ header {
 .navbar {
   background: white;
 }
+
+.dropdown {
+  width: 100%;
+  margin: 2.5rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: black;
+  width: 450px;
+  text-align: start;
+}
+
+.btn-secondary:hover {
+  background-color: white;
+  color: black;
+}
+
+.dropdown .btn-secondary:active {
+  background-color: white !important;
+  color: black !important;
+}
+
+.dropdown>button::after {
+  margin-left: 370px;
+}
+
+.dropdown-menu {
+  width: 450px;
+}
