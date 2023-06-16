@@ -7,7 +7,6 @@ const app = express()
 require('./config/mongoose')
 const authenticator = (req, res, next) => {
   if (req.session.isLoggedIn) {
-    // 用户已经通过身份验证
     return next();
   }
   res.redirect('/users/login');
@@ -22,12 +21,18 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }))
-app.use(router)
 
-
-app.get('/', authenticator, (req, res) => {
-  res.render('index')
+app.use((req, res, next) => {
+  res.locals.isLoggedIn = req.session.isLoggedIn
+  res.locals.user = req.user
+  next()
 })
+
+app.use((req, res, next) => {
+  req.user = req.session.user;
+});
+
+app.use(router)
 
 app.listen(3000, () => {
   console.log('Server is running')

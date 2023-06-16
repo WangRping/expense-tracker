@@ -13,6 +13,16 @@
       <div class="nav-brand">
         <h3>家庭帳本</H1>
       </div>
+      {{#if isLoggedIn}}
+      <div class="nav-login">
+        <a href="/users/logout">登出</a>
+      </div>
+      {{else}}
+      <div class="nav-login">
+        <a href="/users/login">登入</a>
+      </div>
+      {{/if}}
+
     </div>
   </header>
 

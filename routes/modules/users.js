@@ -21,6 +21,7 @@ router.post('/login', (req, res) => {
       } else {
         req.session.isLoggedIn = true;
         req.session.user = user
+        req.user = user;
         res.redirect('/')
       }
     })
