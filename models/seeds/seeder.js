@@ -16,6 +16,7 @@ db.once('open', async () => {
     await Category.create({ category_name: '其他', img: '<i class="fa-solid fa-pen"></i>' });
 
     await User.create({ name: 'user', password: 'user', email: 'user@example.com' });
+    await User.create({ name: 'admin', password: 'admin', email: 'admin@example.com' });
 
     const user = await User.findOne({ name: 'user' }).lean();
     const userId = user._id.toString();
