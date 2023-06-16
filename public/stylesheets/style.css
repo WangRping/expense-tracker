@@ -2,6 +2,8 @@ body {
   margin: 0 0;
 }
 
+/* header section */
+
 header {
   background: rgba(209, 204, 204, 0.89);
 }
@@ -35,6 +37,8 @@ header {
   background: white;
 }
 
+/* category section */
+
 .dropdown {
   width: 100%;
   margin: 2.5rem auto;
@@ -45,7 +49,7 @@ header {
 .btn-secondary {
   background-color: white;
   color: black;
-  width: 450px;
+  width: 550px;
   text-align: start;
 }
 
@@ -60,9 +64,107 @@ header {
 }
 
 .dropdown>button::after {
-  margin-left: 370px;
+  margin-left: 480px;
 }
 
 .dropdown-menu {
-  width: 450px;
+  width: 550px;
+}
+
+/* amount-section */
+.amount-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.amount-wrapper>h5,
+.amount-wrapper>h1 {
+  margin: 0 15px;
+}
+
+.amount-wrapper>h5 {
+  font-weight: 600;
+}
+
+.amount-wrapper>h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgba(255, 136, 0, 0.692);
+}
+
+/* record-section */
+.record-wrappser {
+  width: 550px;
+  margin: 2.5rem auto;
+}
+
+.record-wrappser .card {
+  border-radius: 0;
+  border: 0;
+  padding: 0.25rem 0;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 1fr;
+  position: relative;
+}
+
+.category-img {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-img>i {
+  font-size: 2.5rem;
+  color: #bbe6ee;
+}
+
+.record-content {
+  grid-row: 1/3;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-row: 1fr 1fr;
+}
+
+.record-title {
+  font-size: 1.25rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.record-date {
+  font-size: 0.85rem;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.record-amout {
+  grid-column: 2/3;
+  grid-row: 1/3;
+  align-self: center;
+  text-align: center;
+}
+
+.record-wrappser .card>a {
+  position: absolute;
+  right: -100px;
+  top: 12px;
+  text-decoration: none;
+  color: black;
+}
+
+.record-wrappser .card>form {
+  position: absolute;
+  top: 10px;
+  right: -150px;
+}
+
+.record-wrappser .card>form>button {
+  background: white;
+  border: 0;
 }
