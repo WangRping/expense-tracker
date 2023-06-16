@@ -22,8 +22,8 @@ router.get('/', async (req, res) => {
       record.date = moment(record.date).format('YYYY/MM/DD'); // 格式化日期
       renderRecords.push(record);
     }
-
-    res.render('index', { records: renderRecords });
+    const categorys = await Category.find().lean()
+    res.render('index', { records: renderRecords, categorys });
   } catch (err) {
     console.error(err);
     res.status(500).send('Internal Server Error');
