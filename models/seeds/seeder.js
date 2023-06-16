@@ -9,11 +9,11 @@ const db = require('../../config/mongoose')
 
 db.once('open', async () => {
   try {
-    await Category.create({ category_name: '家居物業' });
-    await Category.create({ category_name: '交通出行' });
-    await Category.create({ category_name: '休閒娛樂' });
-    await Category.create({ category_name: '餐飲食品' });
-    await Category.create({ category_name: '其他' });
+    await Category.create({ category_name: '家居物業', img: '<i class="fa-solid fa-house"></i>' });
+    await Category.create({ category_name: '交通出行', img: '<i class="fa-solid fa-van-shuttle"></i>' });
+    await Category.create({ category_name: '休閒娛樂', img: '<i class="fa-solid fa-face-grin-beam"></i>' });
+    await Category.create({ category_name: '餐飲食品', img: '<i class="fa-solid fa-utensils"></i>' });
+    await Category.create({ category_name: '其他', img: '<i class="fa-solid fa-pen"></i>' });
 
     await User.create({ name: 'user', password: 'user', email: 'user@example.com' });
 
