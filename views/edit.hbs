@@ -1,10 +1,8 @@
-<div class="container">
+<div class="edit-container">
   <div class="row">
     <form action="/records/{{record._id}}/edit" method="post">
-      <div class="col-2">
-        <p>*必田欄位</p>
-      </div>
-      <div class="col-2">
+      <div class="">
+        <p>*必填欄位</p>
         <h3>請修改你的支出</h3>
       </div>
       <div class="name-content"><label for="name">名稱* :</label><input type="text" name="name" id="name"
@@ -17,7 +15,10 @@
       <div class="amount-content"><label for="amount">金額* :</label> <input type="number" name="amount" id="amount"
           value="{{record.amount}}">
       </div>
-      <button class="btn" type="submit">送出</button>
+      <div>
+        <label for=""></label>
+        <button class="btn" type="submit">送出</button>
+      </div>
     </form>
   </div>
 </div>

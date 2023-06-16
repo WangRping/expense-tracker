@@ -1,3 +1,11 @@
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0 0;
 }
@@ -17,7 +25,9 @@ header {
   align-items: center;
 }
 
-.nav-brand>h3 {
+.nav-brand>h3>a {
+  color: black;
+  text-decoration: none;
   font-weight: 900;
 }
 
@@ -65,6 +75,11 @@ header {
 
 .dropdown>button::after {
   margin-left: 480px;
+}
+
+.dropdown-item:active {
+  background: white;
+  color: black;
 }
 
 .dropdown-menu {
@@ -207,7 +222,7 @@ header {
 }
 
 .login-container>form>div>input {
-  width: 82.5%;
+  width: auto;
 }
 
 .btn-content {
@@ -220,4 +235,49 @@ header {
   color: white;
   border-radius: 5px;
   background-color: #ec673e;
+}
+
+/* create-record-page */
+.edit-container,
+.create-container {
+  display: flex;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.create-container .row,
+.edit-container .row {
+  width: 100%;
+}
+
+.create-container .row>form>div,
+.edit-container .row>form>div {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.25rem 0;
+}
+
+.create-container .row>form>div>p,
+.edit-container .row>form>div>p {
+  width: 25%;
+  font-size: 0.75rem;
+}
+
+.create-container .row>form>div>h3,
+.edit-container .row>form>div>h3 {
+  width: 75%;
+  text-align: center;
+}
+
+.create-container .row>form>div>select,
+.create-container .row>form>div>input,
+.edit-container .row>form>div>input,
+.edit-container .row>form>div>select {
+  width: 70%;
+}
+
+.create-container .row>form>div>button,
+.edit-container .row>form>div>button {
+  width: 70%;
+  border: 1px black solid;
 }
