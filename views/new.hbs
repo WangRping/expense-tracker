@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <form action="/records/new" method="post">
+      <div class="col-2">
+        <p>*必田欄位</p>
+      </div>
+      <div class="col-2">
+        <h3>請輸入你的支出</h3>
+      </div>
+      <div class="name-content"><label for="name">名稱* :</label><input type="text" name="name" id="name"></div>
+      <div class="date-content"><label for="date">日期* :</label><input type="date" name="date" id="date"></div>
+      <div class="category-content"><label for="category">類別* :</label><select name="categoryId" id="categoryId">{{#each
+          categorys}} <option value="{{this._id}}">{{this.category_name}}
+          </option> {{/each}}</select></div>
+      <div class="amount-content"><label for="amount">金額* :</label> <input type="number" name="amount" id="amount">
+      </div>
+      <button class="btn" type="submit">新增支出</button>
+    </form>
+  </div>
+</div>
