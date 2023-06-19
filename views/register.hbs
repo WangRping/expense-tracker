@@ -1,6 +1,7 @@
 <div class="login-container">
   <h1 class="login-title">帳號註冊</h1>
   <form action="/users/register" method="post">
+    {{> message}}
     <div class="name-content">
       <label for="name">姓名:</label>
       <input type="text" name="name" id="name" value="{{name}}">

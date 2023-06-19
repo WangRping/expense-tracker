@@ -55,10 +55,17 @@ router.get('/:id/edit', async (req, res) => {
   }
 })
 
-router.post('/:id/edit', (req, res) => {
+router.post('/:id/edit', async (req, res) => {
   const _id = req.params.id
   const userId = req.user._id
   const editRecordy = req.body
+  const categorys = await Category.find().lean()
+  for (const key in editRecordy) {
+    if (!editRecordy[key]) {
+      return res.render('edit', { record: editRecordy, categorys })
+    }
+  }
+
   Record.findOne({ _id, userId })
     .then(record => {
       for (const key in editRecordy) {

@@ -1,6 +1,7 @@
 <div class="login-container">
   <h1 class="login-title">帳號登入</h1>
   <form action="/users/login" method="post">
+    {{> message}}
     <div class="email-content">
       <label for="email">信箱:</label>
       <input type="email" name="email" id="email">

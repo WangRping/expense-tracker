@@ -1,5 +1,6 @@
 const express = require('express')
 const session = require('express-session')
+const flash = require('connect-flash')
 const bodyParser = require('body-parser')
 const exphbs = require('express-handlebars')
 const router = require('./routes/index')
@@ -22,17 +23,16 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }))
+app.use(flash())
 
 app.use((req, res, next) => {
   res.locals.isLoggedIn = req.session.isLoggedIn
-  res.locals.user = req.user
+  // res.locals.user = req.user
+  req.user = req.session.user;
+  res.locals.success_msg = req.flash('success_msg')
+  res.locals.warning_msg = req.flash('warning_msg')
   next()
 })
-
-app.use((req, res, next) => {
-  req.user = req.session.user;
-  next()
-});
 
 app.use(router)
 
