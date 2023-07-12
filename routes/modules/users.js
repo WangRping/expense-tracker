@@ -29,7 +29,6 @@ router.post('/login', (req, res) => {
     })
 });
 
-
 router.get('/logout', (req, res) => {
   return req.session.destroy(() => {
     const success_msg = '你已經成功登出'
